@@ -550,7 +550,7 @@ body ._logo a ._logo-subtitle {
   }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 790px) {
   .main-block {
     min-height: 710px;
     padding-bottom: 0;
