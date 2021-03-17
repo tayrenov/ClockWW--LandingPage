@@ -37,15 +37,19 @@ burger_menu.addEventListener('click', () => {
 
 
 new Swiper('.main-block__slider', { 
-    //Авто высота
       autoHeight:true,
-    //Стрелки
-    /*
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev'
-      },*/
-      //Булеты, навигация, текущее положение
+      loop:true,
+
+      pagination: {
+        el:'.swiper-pagination',
+        clickable: true
+      }
+    });
+
+new Swiper('.catalog-slider', { 
+
+      autoHeight:true,
+      loop:true,
       pagination: {
         el:'.swiper-pagination',
         clickable: true
