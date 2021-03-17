@@ -18,6 +18,24 @@ function MoveBackground(e)
 
 }
 
+const header = document.querySelector('header'),
+      header_nav = header. querySelector('nav'),
+      burger_menu = document.querySelector('.header__burger'),
+      burger_menu_icon = burger_menu.querySelector('.header__burger-middle');
+
+burger_menu.addEventListener('click', () => {
+    burger_menu_icon.classList.toggle('active');
+    header_nav.classList.toggle('active-nav');
+
+    if (burger_menu_icon.classList.value == 'header__burger-middle active') {
+        document.querySelector('body').style.overflow="hidden";
+    } else {
+        document.querySelector('body').style.overflow="auto";
+    }
+});     
+
+
+
 new Swiper('.main-block__slider', { 
     //Авто высота
       autoHeight:true,
