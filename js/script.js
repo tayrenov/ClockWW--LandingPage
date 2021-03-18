@@ -20,21 +20,36 @@ function MoveBackground(e)
 
 const header = document.querySelector('header'),
       header_nav = header. querySelector('nav'),
+      header_ul = header_nav.querySelector('ul'),
+      header_li = header_nav.querySelector('li'),
       burger_menu = document.querySelector('.header__burger'),
       burger_menu_icon = burger_menu.querySelector('.header__burger-middle');
 
-burger_menu.addEventListener('click', () => {
-    burger_menu_icon.classList.toggle('active');
-    header_nav.classList.toggle('active-nav');
+function toggleBurgerMenu() {
+  burger_menu_icon.classList.toggle('active');
+  header_nav.classList.toggle('active-nav');
 
-    if (burger_menu_icon.classList.value == 'header__burger-middle active') {
-        document.querySelector('body').style.overflow="hidden";
-    } else {
-        document.querySelector('body').style.overflow="auto";
-    }
+  if (burger_menu_icon.classList.value == 'header__burger-middle active') {
+      document.querySelector('body').style.overflow="hidden";
+  } else {
+      document.querySelector('body').style.overflow="auto";
+  }
+}
+
+burger_menu.addEventListener('click', () => {
+  toggleBurgerMenu();
 });     
 
 
+header_nav.addEventListener('click', (e) => {
+  const target=e.target;
+
+  if (target.parentElement != header_ul && target != header_ul) {
+    toggleBurgerMenu();
+  }
+
+
+});
 
 new Swiper('.main-block__slider', { 
       autoHeight:true,
